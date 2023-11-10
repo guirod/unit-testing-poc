@@ -2,6 +2,8 @@
 
 namespace Guirod\UnitTestingPoc\Model;
 
+use Guirod\UnitTestingPoc\Service\Calc;
+
 class MyClass
 {
     protected int $id;
@@ -34,5 +36,10 @@ class MyClass
     public function print(): void
     {
         echo "Votre instance de MyClass a pour id : " . $this->id . " et pour nom : " . $this->name . "<br/>";
+    }
+
+    public function calcSomething(float $nb1, float $nb2, Calc $service)
+    {
+        return $service->add($nb1,$nb2);
     }
 }
